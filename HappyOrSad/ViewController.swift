@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var inputMessage: UITextField!
     @IBOutlet weak var outputText: UILabel!
     
@@ -17,27 +17,39 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    
     @IBAction func analyzeMood(_ sender: Any) {
         
         guard let inputMessageAsString = inputMessage.text, inputMessageAsString != "" else {
-            outputText.text = "Please enter a number."
+            outputText.text = "Please enter a string with at least 1 and no more than 255 characters."
             return
         }
         
         
+        if inputMessageAsString.count >= 255 {
+            outputText.text = "Please enter a string with at least 1 and no more than 255 characters."
+        }
         
         
-        
-        
-        
-        
-        
-        
-        
+//        😃 ,😊 ,
+//      ☹ ,🙁 ,😕 ,😔
         
         
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
+
 
