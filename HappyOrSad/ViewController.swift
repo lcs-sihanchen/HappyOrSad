@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         
         if inputMessageAsString.count >= 255 {
             outputText.text = "Please enter a string with at least 1 and no more than 255 characters."
+            return
         }
         var sadMoodValue = 0
         var happyMoodValue = 0
@@ -42,6 +43,13 @@ class ViewController: UIViewController {
                 happyMoodValue += 1
             }
             
+            if scalarValuesAsString == "128516" {
+                happyMoodValue += 1
+            }
+            
+            if scalarValuesAsString == "128578" {
+                happyMoodValue += 1
+            }
             if scalarValuesAsString == "9785" {
                 sadMoodValue += 1
             }
