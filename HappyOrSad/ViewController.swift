@@ -30,29 +30,30 @@ class ViewController: UIViewController {
         if inputMessageAsString.count >= 255 {
             outputText.text = "Please enter a string with at least 1 and no more than 255 characters."
         }
-        var moodValue = 0
+        var sadMoodValue = 0
+        var happyMoodValue = 0
         for scalars in inputMessageAsString.unicodeScalars {
             let scalarValues = scalars.value
             var scalarValuesAsString = String(scalarValues)
             if scalarValuesAsString == "128522" {
-                moodValue += 1
+                happyMoodValue += 1
             }
             if scalarValuesAsString == "128515" {
-                           moodValue += 1
+                           happyMoodValue += 1
                        }
             
             if scalarValuesAsString == "9785" {
-                           moodValue -= 1
+                           sadMoodValue -= 1
                        }
             if scalarValuesAsString == "128577" {
-                           moodValue -= 1
+                           sadMoodValue -= 1
                        }
             
             if scalarValuesAsString == "128533" {
-                                      moodValue -= 1
+                                      sadMoodValue -= 1
                                   }
             if scalarValuesAsString == "128532" {
-                                      moodValue -= 1
+                                      sadMoodValue -= 1
                                   }
 //        if inputMessageAsString.contains("☹") {
 //            moodValue -= 1
@@ -78,10 +79,12 @@ class ViewController: UIViewController {
 //        }
 //        }
         
-        if moodValue > 0 {
+        if happyMoodValue > 0 {
             outputText.text = "Happy"
-        } else if moodValue < 0 {
+        } else if sadMoodValue < 0 {
             outputText.text = "Sad"
+        } else if sadMoodValue == happyMoodValue{
+            outputText.text = "Unsure"
         } else {
             outputText.text = "None"
         }
