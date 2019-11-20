@@ -39,59 +39,59 @@ class ViewController: UIViewController {
                 happyMoodValue += 1
             }
             if scalarValuesAsString == "128515" {
-                           happyMoodValue += 1
-                       }
+                happyMoodValue += 1
+            }
             
             if scalarValuesAsString == "9785" {
-                           sadMoodValue += 1
-                       }
+                sadMoodValue += 1
+            }
             if scalarValuesAsString == "128577" {
-                           sadMoodValue += 1
-                       }
+                sadMoodValue += 1
+            }
             
             if scalarValuesAsString == "128533" {
-                                      sadMoodValue += 1
-                                  }
+                sadMoodValue += 1
+            }
             if scalarValuesAsString == "128532" {
-                                      sadMoodValue += 1
-                                  }
-//        if inputMessageAsString.contains("☹") {
-//            moodValue -= 1
-//        }
-//
-//        if inputMessageAsString.contains("🙁") {
-//            moodValue -= 1
-//        }
-//
-//        if inputMessageAsString.contains("😕") {
-//            moodValue -= 1
-//        }
-//        if inputMessageAsString.contains("😔") {
-//            moodValue -= 1
-//        }
-//
-//        if inputMessageAsString.contains("😃") {
-//            moodValue += 1
-//        }
-//
-//        if inputMessageAsString.contains("😊") {
-//            moodValue += 1
-//        }
-//        }
-        
-        if happyMoodValue > 0 {
-            outputText.text = "Happy"
-        } else if sadMoodValue > 0 {
-            outputText.text = "Sad"
-        } else if sadMoodValue == happyMoodValue{
-            outputText.text = "Unsure"
-        } else {
-            outputText.text = "None"
-        }
-        //        😃 ,😊 ,
-        //      ☹ ,🙁 ,😕 ,😔
-        
-        
+                sadMoodValue += 1
+            }
+            //        if inputMessageAsString.contains("☹") {
+            //            moodValue -= 1
+            //        }
+            //
+            //        if inputMessageAsString.contains("🙁") {
+            //            moodValue -= 1
+            //        }
+            //
+            //        if inputMessageAsString.contains("😕") {
+            //            moodValue -= 1
+            //        }
+            //        if inputMessageAsString.contains("😔") {
+            //            moodValue -= 1
+            //        }
+            //
+            //        if inputMessageAsString.contains("😃") {
+            //            moodValue += 1
+            //        }
+            //
+            //        if inputMessageAsString.contains("😊") {
+            //            moodValue += 1
+            //        }
+            //        }
+            
+            if happyMoodValue > sadMoodValue {
+                outputText.text = "Happy"
+            } else if sadMoodValue > happyMoodValue {
+                outputText.text = "Sad"
+            } else if sadMoodValue == 0 && happyMoodValue == 0{
+                outputText.text = "None"
+            } else if sadMoodValue == happyMoodValue{
+                outputText.text = "Unsure"
+            }
+            //        😃 ,😊 ,
+            //      ☹ ,🙁 ,😕 ,😔
+            
+            
         }
         sadMoodValue = 0
         happyMoodValue = 0
