@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         }
         
         
-        if inputMessageAsString.count >= 255 {
+        if inputMessageAsString.count > 255 {
             outputText.text = "Please enter a string with at least 1 and no more than 255 characters."
             return
         }
