@@ -43,17 +43,17 @@ class ViewController: UIViewController {
                        }
             
             if scalarValuesAsString == "9785" {
-                           sadMoodValue -= 1
+                           sadMoodValue += 1
                        }
             if scalarValuesAsString == "128577" {
-                           sadMoodValue -= 1
+                           sadMoodValue += 1
                        }
             
             if scalarValuesAsString == "128533" {
-                                      sadMoodValue -= 1
+                                      sadMoodValue += 1
                                   }
             if scalarValuesAsString == "128532" {
-                                      sadMoodValue -= 1
+                                      sadMoodValue += 1
                                   }
 //        if inputMessageAsString.contains("☹") {
 //            moodValue -= 1
@@ -81,7 +81,7 @@ class ViewController: UIViewController {
         
         if happyMoodValue > 0 {
             outputText.text = "Happy"
-        } else if sadMoodValue < 0 {
+        } else if sadMoodValue > 0 {
             outputText.text = "Sad"
         } else if sadMoodValue == happyMoodValue{
             outputText.text = "Unsure"
@@ -93,6 +93,8 @@ class ViewController: UIViewController {
         
         
         }
+        sadMoodValue = 0
+        happyMoodValue = 0
     }
     
     
